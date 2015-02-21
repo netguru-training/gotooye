@@ -2,5 +2,9 @@
   Add a step for
   = recipe.name
 
-form...
+= form_for [recipe, step] do |f|
+  = f.label :description
+  = f.text_area :description
+
+  = f.submit "submit"
 
