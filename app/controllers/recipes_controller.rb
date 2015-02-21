@@ -19,8 +19,11 @@ class RecipesController < ApplicationController
   end
 
   def destroy
-    recipe.destroy
-    redirect_to recipes_path, notice: 'Recipe was destroyed. It was so untasty!'
+    if recipe.destroy
+      redirect_to recipes_path, notice: 'Recipe was destroyed. It was so untasty!'
+    else
+      redirect_to recipes_path, alert: 'Could not delete this recipe.'
+    end
   end
 
   private
