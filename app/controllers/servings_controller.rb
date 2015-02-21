@@ -18,6 +18,11 @@ class ServingsController < ApplicationController
   end
 
   def update
+    if serving.save
+      redirect_to products_path, flash: { notice: "Product's serving successfully edited!" }
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
