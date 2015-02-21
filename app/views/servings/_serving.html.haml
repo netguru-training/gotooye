@@ -2,6 +2,7 @@
 %span= "| protein: #{serving.protein} g"
 %span= " | fat: #{serving.fat} g"
 %span= " | carb: #{serving.carb} g"
-%span.serving-options
-  = link_to 'Edit', edit_product_serving_path(product, serving)
-  = link_to 'Delete', product_serving_path(product, serving), method: :delete, data: { confirm: 'Are you sure you want delete it?'}
+- if user_signed_in?
+  %span.serving-options
+    = link_to 'Edit', edit_product_serving_path(product, serving)
+    = link_to 'Delete', product_serving_path(product, serving), method: :delete, data: { confirm: 'Are you sure you want delete it?'}
