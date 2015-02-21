@@ -1,0 +1,14 @@
+%h1 Recipe
+
+%p#notice= notice
+%p#error= flash[:error]
+
+%table
+  %tr
+    %th Name
+    %th Description
+
+  - recipes.each do |recipe|
+    %tr
+      %td= recipe.name
+      %td= recipe.desc
