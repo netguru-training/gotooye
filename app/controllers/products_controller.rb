@@ -16,6 +16,25 @@ class ProductsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if product.save
+      redirect_to products_path, flash: { notice: 'Product successfully edited!' }
+    else 
+      render action: 'edit'
+    end
+  end
+
+  def destroy
+    if product.destroy
+      redirect_to products_path, flash: { notice: 'Product successfully deleted!' }
+    else 
+      redirect_to products_path, flash: { error: "Could not delete product!" }
+    end
+  end
+
   private
 
     def product_params

@@ -1,9 +1,18 @@
 .products {
-  .options {
+  .product-options {
+    display: none;
+  }
+  .product {
+    &:hover .product-options {
+      display: inline-block;
+    }
+  }
+
+  .serving-options {
     display: none;
   }
   .serving{
-    &:hover .options {
+    &:hover .serving-options {
       display: inline-block;
     }
   }
