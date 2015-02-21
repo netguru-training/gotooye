@@ -1,0 +1,10 @@
+.products {
+  .options {
+    display: none;
+  }
+  .serving{
+    &:hover .options {
+      display: inline-block;
+    }
+  }
+}
