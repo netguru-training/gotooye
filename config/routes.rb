@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-  resources :products, only: [:index, :new, :create]
+  resources :products, only: [:index, :new, :create] do
+    resources :servings, only: [:new, :create]
+  end
 end
