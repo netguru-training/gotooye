@@ -3,4 +3,4 @@ $ ->
   $select2.on("change", (e) ->
     li = "<li>" + e.val + "</li>"
     $("ul.ingredients-header").append(li)
-    )
+  )
