@@ -1,0 +1,21 @@
+
+.container
+  .row
+    .col-md-6
+      %h1 Product List 
+
+      %table
+        %tr
+          %th Product name
+
+        -products.each do |product|
+          %tr
+            %td= product.name
+
+
+
+
+    .col-md-6
+      %h4 Do you want add some product?
+      = link_to 'Add new product',  new_product_path, class: 'btn btn-primary'
+  
