@@ -4,5 +4,5 @@ Rails.application.routes.draw do
 
   root to: 'visitors#index'
 
-  resources :products, only: [:index, :new]
+  resources :products, only: [:index, :new, :create]
 end
