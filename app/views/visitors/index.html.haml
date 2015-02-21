@@ -1,7 +1,10 @@
 %h3 Welcome!
 
 - if user_signed_in?
-  logged
-  = image_tag current_user.gravatar_url
+  %p
+    logged as
+    = current_user.name
+  #usersAvatar
+    = image_tag current_user.gravatar_url
 - else
   unknown
