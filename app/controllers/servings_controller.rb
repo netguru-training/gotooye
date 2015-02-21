@@ -1,4 +1,6 @@
 class ServingsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   expose(:serving, attributes: :serving_params)
   expose(:sevings)
   expose(:product)

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   expose(:products)
   expose(:product, attributes: :product_params)
 
