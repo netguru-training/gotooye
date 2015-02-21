@@ -5,6 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+#Users
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
@@ -25,3 +27,33 @@ users = []
   )
 end
 
+#Products
+egg = Product.create(name: "Egg")
+tomato = Product.create(name: "Tomato")
+
+#Servings
+egg.servings.create(
+  name: "100g",
+  protein: 70.0,
+  carb: 10.0,
+  fat: 20.0
+)
+egg.servings.create(
+  name: "piece",
+  protein: 30.0,
+  carb: 6.0,
+  fat: 11.0
+)
+
+tomato.servings.create(
+  name: "100g",
+  protein: 40.0,
+  carb: 50.0,
+  fat: 10.0
+)
+tomato.servings.create(
+  name: "piece",
+  protein: 25.0,
+  carb: 26.0,
+  fat: 4.0
+)
