@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   end
 
   get '/ingredient-template/:product_id', to: 'template#display_product_servings'
+  resources :favourite_products, only: [:create]
 end
