@@ -1,0 +1,14 @@
+.form-horizontal
+  = form_for recipe do |f|
+    .form-group
+      .control-label.col-xs-2
+        = f.label :name
+      .col-xs-6
+        = f.text_field :name, class: 'form-control'
+    .form-group
+      .control-label.col-xs-2
+        = f.label :desc
+      .col-xs-6
+        = f.text_area :desc, class: 'form-control'
+    .col-xs-offset-2.col-xs-10
+      = f.submit 'Save', class: 'btn btn-default'
