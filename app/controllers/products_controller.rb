@@ -1,4 +1,4 @@
-class RecipesController < ApplicationController
+class ProductsController < ApplicationController
   expose(:products)
   expose(:product)
 
