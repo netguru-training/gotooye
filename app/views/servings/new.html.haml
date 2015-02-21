@@ -1,13 +1,3 @@
 %h3= "Add new serving to #{product.name}"
-= simple_form_for [product, serving] do |f|
-  .form-group
-    = f.input :name, label: 'Serving name'
-  .form-group
-    = f.input :protein, label: 'Amount of protein'
-  .form-group
-    = f.input :fat, label: 'Amount of fat'
-  .form-group
-    = f.input :carb, label: 'Amount of carb'
-  .form-group
-    = f.button :submit, 'Add serving', class: 'btn btn-primary'
+= render 'form'
     
