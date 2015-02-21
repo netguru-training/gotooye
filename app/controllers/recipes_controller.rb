@@ -1,9 +1,8 @@
 class RecipesController < ApplicationController
   expose(:recipes)
-  expose(:recipe)
+  expose(:recipe, attributes: :recipe_params)
 
   def create
-    self.recipe = Recipe.new(recipe_params)
     if recipe.save
       redirect_to recipe, notice: 'Recipe was successfully created.'
     else
