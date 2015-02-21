@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   expose(:products)
-  expose(:product)
+  expose(:product, attributes: :product_params)
 
   def index
   end
@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
   end
 
   def create
-    self.product = Product.new(product_params)
     if product.save
       redirect_to products_path, flash: { notice: 'Product successfully added!' }
     else
@@ -17,7 +16,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  private 
+  private
 
     def product_params
       params.require(:product).permit(:name)
