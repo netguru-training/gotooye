@@ -1,16 +1,19 @@
-%h1 Recipe
-
+%h1 Recipes
+%br
 %b= link_to 'Add a new recipe', new_recipe_path
 %br
-%p#notice= notice
-%p#error= flash[:error]
+%br
 
-%table
+%table.table
   %tr
-    %th.col-sm-4 Name
+    %th.col-sm-2 Name
     %th.col-sm-8 Description
+    %th.col-sm-2
 
   - recipes.each do |recipe|
     %tr
-      %td= recipe.name
+      %td= link_to recipe.name, recipe_path(recipe)
       %td= recipe.desc
+      %td
+        =link_to 'Edit', edit_recipe_path(recipe)
+        =link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' }

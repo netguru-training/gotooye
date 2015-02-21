@@ -1,7 +1,7 @@
 module RecipeHelper
 
   def static_ingredients
-    [ "jajko male", "jajko duze" ]
+    [ "egg", "butter", "suger" ]
   end
 
 end
