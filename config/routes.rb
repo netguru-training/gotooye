@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'steps/add', as: 'add_step'
 
-  resources :recipes
+  resources :recipes do
+    resources :steps, only: [:new, :create]
+  end
+
   devise_for :users
 
   get '/users/', to: 'users#index', as: 'users'

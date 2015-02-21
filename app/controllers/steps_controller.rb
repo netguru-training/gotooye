@@ -1,4 +1,9 @@
 class StepsController < ApplicationController
-  def add
+
+  expose :recipe
+  expose :step
+
+  def new
+    
   end
 end
