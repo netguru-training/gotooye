@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'steps/add', as: 'add_step'
+
   resources :recipes
   devise_for :users
 
