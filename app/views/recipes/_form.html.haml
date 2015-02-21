@@ -5,6 +5,6 @@
   .form-inputs
     = f.input :desc, autofocus: true
   .form-inputs
-    = f.input :ingredients, collection: ["jajko male", "jajko duze"], input_html: { class: "js-example-basic-single" }
+    = f.input :ingredients, collection: static_ingredients, input_html: { class: "js-example-basic-single" }
   .form-actions
     = f.button :submit, "Save"
