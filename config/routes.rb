@@ -12,4 +12,6 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :create, :edit, :update, :destroy] do
     resources :servings, only: [:new, :create, :edit, :update, :destroy]
   end
+
+  get '/ingredient-template/:product_id', to: 'template#display_product_servings'
 end

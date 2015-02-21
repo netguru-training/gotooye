@@ -1,7 +1,6 @@
 module RecipeHelper
 
-  def static_ingredients
-    [ "egg", "butter", "suger" ]
+  def ingredients
+    Product.by_name
   end
-
 end
