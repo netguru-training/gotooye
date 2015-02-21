@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 ruby '2.2.0'
 gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 5.0'
@@ -19,6 +20,7 @@ gem 'gravtastic'
 gem 'haml-rails'
 gem 'pg'
 gem 'simple_form'
+gem 'select2-rails'
 group :development do
   gem 'better_errors'
   gem 'html2haml'
