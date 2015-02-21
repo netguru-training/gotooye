@@ -1,5 +1,5 @@
 class ServingsController < ApplicationController
-  expose(:serving)
+  expose(:serving, attributes: :serving_params)
   expose(:sevings)
   expose(:product)
 
@@ -7,7 +7,6 @@ class ServingsController < ApplicationController
   end
 
   def create
-    self.serving = product.servings.new(serving_params)
     if serving.save
       redirect_to products_path, flash: { notice: "Product's serving successfully added!" }
     else
@@ -15,9 +14,23 @@ class ServingsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    if serving.destroy
+      redirect_to products_path, flash: { notice: "Product's serving successfully deleted!" }
+    else
+      redirect_to products_path, flash: { error: "Could not delete product's serving" }
+    end
+  end
+
   private 
 
     def serving_params
-      params.require(:serving).permit(:name, :protein, :fat, :carb)
+      params.require(:serving).permit(:name, :protein, :fat, :carb, :product_id)
     end
 end

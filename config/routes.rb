@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
 
   resources :products, only: [:index, :new, :create] do
-    resources :servings, only: [:new, :create]
+    resources :servings, only: [:new, :create, :edit, :update, :destroy]
   end
 end
