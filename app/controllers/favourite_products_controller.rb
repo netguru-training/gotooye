@@ -1,4 +1,6 @@
 class FavouriteProductsController < ApplicationController
+  before_action :authenticate_user!
+  
   def create
    FavouriteProduct.create(favourites_hash)
    render nothing: true, status: :ok

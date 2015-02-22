@@ -1,4 +1,6 @@
 class RecipesController < ApplicationController
+  before_action :authenticate_user!
+  
   expose(:recipes)
   expose(:recipe, attributes: :recipe_params)
   expose(:recipe_products, ancestor: :recipe)
