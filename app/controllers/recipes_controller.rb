@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   expose(:recipes)
   expose(:recipe, attributes: :recipe_params)
-  expose(:steps){recipe.steps}
+  expose(:steps, ancestor: :recipe)
 
   def create
     if recipe.save
