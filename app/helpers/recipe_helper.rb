@@ -7,12 +7,12 @@ module RecipeHelper
   def step_expanded?(index)
     result = {
       expanded: "false",
-      in: ""
+      inn: ""
     }
 
     if index == 0
       result[:expanded] = "true"
-      result[:in] = "in"
+      result[:inn] = "in"
     end
     result
   end
