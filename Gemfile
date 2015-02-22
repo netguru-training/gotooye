@@ -22,11 +22,6 @@ gem 'simple_form'
 gem 'turbolinks'
 gem 'uglifier', '>= 1.3.0'
 
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
 group :development do
   gem 'better_errors'
   gem 'html2haml'
@@ -34,6 +29,9 @@ group :development do
   gem 'spring-commands-rspec'
 end
 group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
   gem 'factory_girl_rails'
   gem 'pry-rails'
   gem 'pry-rescue'
