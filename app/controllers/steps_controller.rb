@@ -3,10 +3,6 @@ class StepsController < ApplicationController
   expose :recipe
   expose(:step, attributes: :step_params)
 
-  def new
-    
-  end
-
   def create
     recipe.steps << step
     if step.save!
