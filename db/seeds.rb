@@ -37,14 +37,16 @@ egg.servings.create(
   protein: 70.0,
   carbs: 10.0,
   fat: 20.0,
-  calories: 200.0
+  calories: 200.0,
+  id: 20
 )
 egg.servings.create(
   name: "piece",
   protein: 30.0,
   carbs: 6.0,
   fat: 11.0,
-  calories: 100.0
+  calories: 100.0,
+  id: 21
 )
 
 tomato.servings.create(
@@ -52,26 +54,53 @@ tomato.servings.create(
   protein: 40.0,
   carbs: 50.0,
   fat: 10.0,
-  calories: 20.0
+  calories: 20.0,
+  id: 23
 )
 tomato.servings.create(
   name: "piece",
   protein: 25.0,
   carbs: 26.0,
   fat: 4.0,
-  calories: 10.0
+  calories: 10.0,
+  id: 24
 )
 
-#Recipes
-3.times do
-  recipe = Recipe.create(
-    name: Faker::Lorem.word.capitalize,
-    desc: Faker::Lorem.sentence
-  )
+recipe = Recipe.create(
+  name: "Jajecznica z pomidorami",
+  desc: Faker::Lorem.sentence,
+  user: user
+)
+
+tomatos_for_scrambbledeggs = RecipeProduct.create(
+  product_id: tomato.id,
+  serving_id: 24,
+  serving_count: 3,
+  recipe_id: recipe.id
+)
+
+eggs_for_scrambbledeggs = RecipeProduct.create(
+  product_id: egg.id,
+  serving_id: 20,
+  serving_count: 2,
+  recipe_id: recipe.id
+)
+
+recipe_tomato = Recipe.create(
+  name: "Tomato salad",
+  desc: Faker::Lorem.sentence,
+  user: user
+)
+
+tomatos_for_salad = RecipeProduct.create(
+  product_id: tomato.id,
+  serving_id: 23,
+  serving_count: 13,
+  recipe_id: recipe_tomato.id
+)
 
   rand(3..6).times do
     recipe.steps << Step.create(
       description: Faker::Lorem.sentence
     )
   end
-end
