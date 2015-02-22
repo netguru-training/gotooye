@@ -9,4 +9,12 @@ class TemplateController < ApplicationController
     end
   end
 
+  def display_favourites_products
+    @user = User.find(params[:user_id])
+    render partial: 'products/favourite_products', layout: false
+  end
+
+  def current_user
+    @user
+  end
 end

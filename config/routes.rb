@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   end
 
   get '/ingredient-template/:product_id', to: 'template#display_product_servings'
+
   resources :favourite_products, only: [:create]
   delete '/favourite_products/', to: 'favourite_products#destroy'
+  get '/favourite_products/:user_id', to: 'template#display_favourites_products'
 end

@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   after_initialize :set_default_role, :if => :new_record?
 
   has_many :favourite_products
+  has_many :favourites, through: :favourite_products, source: :product
 
   def set_default_role
     self.role ||= :user
