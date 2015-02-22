@@ -3,5 +3,6 @@
     %tr
       %th Product name
   %tbody
-    - current_user.favourites.each do |product|
-      = render 'products', product: product
+    - if current_user
+      - current_user.favourites.each do |product|
+        = render 'products', product: product
