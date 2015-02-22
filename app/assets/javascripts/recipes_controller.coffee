@@ -18,6 +18,8 @@ ready = ->
       url: url
       type: "PUT"
       data: paramz
+      error: ->
+        sweetAlert("Something went wrong... Check validations!")
       success: ->
         window.location.href = "/recipes"
 
@@ -29,6 +31,8 @@ ready = ->
       url: "/recipes"
       type: "POST"
       data: paramz
+      error: ->
+        sweetAlert("Something went wrong... Check validations!")
       success: ->
         window.location.href = "/recipes"
 
@@ -54,7 +58,6 @@ ready = ->
       }
     }
     attributes
-
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

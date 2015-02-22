@@ -6,6 +6,8 @@
     %meta{:name => "description", :content => "#{content_for?(:description) ? yield(:description) : 'Gotooye'}"}
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = javascript_include_tag 'sweet', 'sweet-alert.min' => true
+    = stylesheet_link_tag 'sweet', media: 'all', 'sweet-alert' => true
     = csrf_meta_tags
   %body
     %header
