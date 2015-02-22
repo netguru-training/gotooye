@@ -5,9 +5,8 @@ class StepsController < ApplicationController
 
   def create
     recipe.steps << step
-    if step.save!
-      flash[:notice] = "step created"
-      redirect_to recipe
+    if step.save
+      redirect_to recipe, notice: "step created"
     else
       flash[:alert] = "step not saved"
       render 'new'
