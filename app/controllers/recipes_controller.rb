@@ -16,6 +16,7 @@ class RecipesController < ApplicationController
       @summary[:protein] += rp.serving_count * rp.serving.protein
       @summary[:carbs] += rp.serving_count * rp.serving.carbs
       @summary[:fat] += rp.serving_count * rp.serving.fat
+      @summary[:calories] += rp.serving_count * rp.serving.calories
     end
   end
 
