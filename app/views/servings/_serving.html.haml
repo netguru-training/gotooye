@@ -2,7 +2,7 @@
 %span= "| protein: #{serving.protein} g"
 %span= " | fat: #{serving.fat} g"
 %span= " | carbs: #{serving.carbs} g"
-%span= " | calories: #{serving.calories} g"
+%span= " | calories: #{serving.calories} kcal"
 - if user_signed_in?
   %span.serving-options
     = link_to 'Edit', edit_product_serving_path(product, serving)
