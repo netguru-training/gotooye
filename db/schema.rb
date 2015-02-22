@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(version: 20150222131930) do
     t.text     "desc"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id", using: :btree
 
   create_table "servings", force: :cascade do |t|
     t.string   "name"
