@@ -4,6 +4,21 @@ class RecipesController < ApplicationController
   expose(:recipe_products, ancestor: :recipe)
   expose(:steps, ancestor: :recipe)
 
+  def show
+    @summary = {
+      protein: 0.0,
+      carbs: 0.0,
+      fat: 0.0,
+      calories: 0.0,
+    }
+
+    recipe_products.each do |rp|
+      @summary[:protein] += rp.serving_count * rp.serving.protein
+      @summary[:carbs] += rp.serving_count * rp.serving.carbs
+      @summary[:fat] += rp.serving_count * rp.serving.fat
+    end
+  end
+
   def create
     if recipe.save!
       render nothing: true, status: :ok

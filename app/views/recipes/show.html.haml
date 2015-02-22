@@ -8,6 +8,21 @@
       %li
         = "#{ingredient.serving_count} of #{ingredient.serving.name} of product: #{ingredient.product.name} "
 
+%h2 Summary:
+%ul
+  %li 
+    Protein:
+    = @summary[:protein]
+  %li 
+    Carbs:
+    = @summary[:carbs]
+  %li 
+    Fat:
+    = @summary[:fat]
+  %li 
+    Calories:
+    xxx
+
 %h2 Steps:
 
 #accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
