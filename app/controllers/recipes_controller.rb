@@ -46,10 +46,9 @@ class RecipesController < ApplicationController
   private
 
   def recipe_params
-    if params["action"] == "create"
+    if params["action"] == "create" && current_user
       params["recipe"]["user_id"] ||= current_user.id
     end
-    binding.pry
     params.require(:recipe).permit(:name, :desc, :user_id,
       { recipe_products_attributes: [:id, :product_id, :serving_id, :serving_count, :recipe_id]}
     )
