@@ -38,6 +38,6 @@ class ServingsController < ApplicationController
   private 
 
     def serving_params
-      params.require(:serving).permit(:name, :protein, :fat, :carb, :product_id)
+      params.require(:serving).permit(:name, :protein, :fat, :carbs, :product_id)
     end
 end
