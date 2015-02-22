@@ -1,8 +1,8 @@
 class Recipe < ActiveRecord::Base
   validates :name, presence: true
-  has_many :recipe_products
+  has_many :recipe_products, dependent: :destroy
   has_many :products, through: :recipe_products
-  has_many :steps
+  has_many :steps, dependent: :destroy
   belongs_to :user
 
   attr_accessor :ingredients
