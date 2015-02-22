@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :desc,
-      :recipe_products_attributes => [:id, :product_id, :serving_id, :serving_count ])
+      :recipe_products_attributes => [:id, :product_id, :serving_id, :serving_count])
   end
 
 end
