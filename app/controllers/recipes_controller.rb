@@ -1,12 +1,8 @@
 class RecipesController < ApplicationController
   expose(:recipes)
   expose(:recipe, attributes: :recipe_params)
-<<<<<<< Updated upstream
+  expose(:recipe_products, ancestor: :recipe)
   expose(:steps, ancestor: :recipe)
-=======
-  expose(:recipe_products){recipe.recipe_products}
-  expose(:steps){recipe.steps}
->>>>>>> Stashed changes
 
   def create
     if recipe.save!
