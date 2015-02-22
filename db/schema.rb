@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150221143622) do
+ActiveRecord::Schema.define(version: 20150222080724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20150221143622) do
     t.string   "name"
     t.float    "protein",    default: 0.0
     t.float    "fat",        default: 0.0
-    t.float    "carb",       default: 0.0
+    t.float    "carbs",      default: 0.0
     t.integer  "product_id"
     t.datetime "created_at"
     t.datetime "updated_at"
