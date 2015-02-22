@@ -1,7 +1,7 @@
 %span= serving.name
 %span= "| protein: #{serving.protein} g"
 %span= " | fat: #{serving.fat} g"
-%span= " | carb: #{serving.carb} g"
+%span= " | carb: #{serving.carbs} g"
 - if user_signed_in?
   %span.serving-options
     = link_to 'Edit', edit_product_serving_path(product, serving)
