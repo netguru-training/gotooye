@@ -34,8 +34,9 @@
           = "Step #{index + 1}"
     .panel-collapse.collapse{ id: "collapse#{index+1}", class: step_expanded?(index)[:inn], "aria-labelledby" => "heading#{index+1}", :role => "tabpanel" }
       .panel-body
-        = step.description
         = display_picture(step)
+        %p
+          = step.description
 
 %br
 
