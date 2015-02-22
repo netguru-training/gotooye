@@ -6,6 +6,26 @@
     &:hover .product-options {
       display: inline-block;
     }
+    .star {
+      &-off {
+        display: inline-block;
+        height: 16px;
+        width:  16px;
+        background-image: image-url('star-off.png');
+        &:hover {
+          background-image: image-url('star-on.png');
+        }
+      }
+      &-on {
+        display: inline-block;
+        height: 16px;
+        width:  16px;
+        background-image: image-url('star-on.png');
+        &:hover {
+          background-image: image-url('star-off.png');
+        }
+      }
+    }
   }
 
   .serving-options {
