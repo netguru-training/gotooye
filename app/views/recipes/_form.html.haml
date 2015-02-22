@@ -4,6 +4,8 @@
     = f.input :name, required: true, autofocus: true
   .form-inputs
     = f.input :desc, autofocus: true
+  - if current_user
+    = f.input :user_id, as: :hidden, value: current_user.id
   - unless recipe_products.empty?
     %b.ingredients-header Already added ingredients:
     - recipe_products.each do |ingredient|

@@ -3,8 +3,16 @@ class Recipe < ActiveRecord::Base
   has_many :recipe_products
   has_many :products, through: :recipe_products
   has_many :steps
+  belongs_to :user
 
   attr_accessor :ingredients
   accepts_nested_attributes_for :recipe_products
+
+  def owner
+    if user
+      return user.email
+    end
+    "Unknown"
+  end
 
 end

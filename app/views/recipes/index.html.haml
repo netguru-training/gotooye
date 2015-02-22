@@ -7,12 +7,14 @@
 %table.table
   %tr
     %th.col-sm-2 Name
+    %th.col-sm-1 Owner
     %th.col-sm-8 Description
-    %th.col-sm-2
+    %th.col-sm-1
 
   - recipes.each do |recipe|
     %tr
       %td= link_to recipe.name, recipe_path(recipe)
+      %td= recipe.owner
       %td= recipe.desc
       %td
         =link_to 'Edit', edit_recipe_path(recipe)

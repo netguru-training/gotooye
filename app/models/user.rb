@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :favourite_products
   has_many :favourites, through: :favourite_products, source: :product
+  has_many :recipes
 
   def set_default_role
     self.role ||= :user
