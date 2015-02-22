@@ -103,4 +103,7 @@ tomatos_for_salad = RecipeProduct.create(
     recipe.steps << Step.create(
       description: Faker::Lorem.sentence
     )
+    recipe_tomato.steps << Step.create(
+      description: Faker::Lorem.sentence
+    )
   end
