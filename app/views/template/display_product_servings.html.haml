@@ -1,5 +1,6 @@
-%li(data-product_id="#{@product.name}")
+%li{ data: { product_id: "#{@product.id}" } }
   = @product.name
   = hidden_field_tag "product_id", @product.id
   = select_tag "serving_id", options_from_collection_for_select(@product.servings, "id", "name"), include_blank: "Choose serving:"
-  = text_field_tag "serving_count", "Serving's count..."
+  = label_tag "Serving's count:"
+  = number_field_tag "serving_count", "1.0", step: "0.1", min: "0.1"

@@ -1,6 +1,13 @@
 %h3= recipe.name
 %p= recipe.desc
 
+%h2 Ingredients:
+%ul
+  - if recipe_products
+    - recipe_products.each do |ingredient|
+      %li
+        = "#{ingredient.serving_count} of #{ingredient.serving.name} of product: #{ingredient.product.name} "
+
 %h2 Steps:
 %ul
   - steps.each do |step|

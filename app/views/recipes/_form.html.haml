@@ -10,6 +10,6 @@
       %ul.ingredients-header Add ingredients:
     = f.input :ingredients, collection: ingredients, label_method: :name,
       value_method: :id, input_html: { class: "js-example-basic-single" }
-    = f.input :recipe_products_attributes, as: :hidden, input_html: { value: "[]" }
+    = f.input "recipe_products_attributes[]", as: :hidden, input_html: { value: [] }
   .form-actions
     = f.button :submit, "Save"
