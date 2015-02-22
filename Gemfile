@@ -3,7 +3,7 @@ source 'https://rails-assets.org'
 ruby '2.2.0'
 
 gem 'active_model_serializers', '~> 0.8.3'
-gem 'aws-sdk'
+gem 'aws-sdk', '< 2.0'
 gem 'bootstrap-sass'
 gem 'decent_exposure'
 gem 'coffee-rails', '~> 4.1.0'
