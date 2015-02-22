@@ -8,6 +8,7 @@ class StepsController < ApplicationController
   end
 
   def create
+    recipe.steps << step
     if step.save!
       flash[:notice] = "step created"
       redirect_to recipe

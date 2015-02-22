@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   expose(:recipes)
   expose(:recipe, attributes: :recipe_params)
+  expose(:steps){recipe.steps}
 
   def create
     if recipe.save
