@@ -3,8 +3,11 @@
 
 %h3 User's recipes
 %ul
-  - user.recipes.each do |r|
-    %li
-      = link_to r.name, recipe_path(r)
+  - if user.recipes.empty?
+    %h4 No recipes. User doesn't like cooking!
+  - else
+    - user.recipes.each do |r|
+      %li
+        = link_to r.name, recipe_path(r)
 
 = link_to "<< Users", users_path
