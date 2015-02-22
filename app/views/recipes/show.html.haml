@@ -8,5 +8,17 @@
       = step.description
       = display_picture(step)
 
+#accordion.panel-group{"aria-multiselectable" => "true", :role => "tablist"}
+- steps.each_with_index do |step, index|
+  .panel.panel-default
+    #headingOne.panel-heading{:role => "tab"}
+      %h4.panel-title
+        %a{"aria-controls" => "collapseOne", "aria-expanded" => step_expanded?(index)[:expanded], "data-parent" => "#accordion", "data-toggle" => "collapse", :href => "#index-#{index}"}
+          = "Step #{index + 1}"
+    .panel-collapse.collapse{ id: "index-#{index}", class: step_expanded?(index)[:in], "aria-labelledby" => "headingOne", :role => "tabpanel" }
+      .panel-body
+        = image_tag 'star-on.png', class: 'stepPicture'
+        = step.description
+
 %br
 = link_to "Add new step", new_recipe_step_path(recipe), class: "btn btn-primary"
