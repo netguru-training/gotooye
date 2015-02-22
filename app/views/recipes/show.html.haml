@@ -6,6 +6,7 @@
   - steps.each do |step|
     %li
       = step.description
+      = display_picture(step)
 
 %br
 = link_to "Add new step", new_recipe_step_path(recipe), class: "btn btn-primary"
