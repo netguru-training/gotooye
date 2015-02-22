@@ -35,25 +35,39 @@ tomato = Product.create(name: "Tomato")
 egg.servings.create(
   name: "100g",
   protein: 70.0,
-  carb: 10.0,
+  carbs: 10.0,
   fat: 20.0
 )
 egg.servings.create(
   name: "piece",
   protein: 30.0,
-  carb: 6.0,
+  carbs: 6.0,
   fat: 11.0
 )
 
 tomato.servings.create(
   name: "100g",
   protein: 40.0,
-  carb: 50.0,
+  carbs: 50.0,
   fat: 10.0
 )
 tomato.servings.create(
   name: "piece",
   protein: 25.0,
-  carb: 26.0,
+  carbs: 26.0,
   fat: 4.0
 )
+
+#Recipes
+3.times do
+  recipe = Recipe.create(
+    name: Faker::Lorem.word.capitalize,
+    desc: Faker::Lorem.sentence
+  )
+
+  rand(3..6).times do
+    recipe.steps << Step.create(
+      description: Faker::Lorem.sentence
+    )
+  end
+end
