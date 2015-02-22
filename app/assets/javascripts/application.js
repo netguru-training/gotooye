@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require bootstrap-sprockets
 //= require select2
 //= require recipes_controller.coffee
+//= require turbolinks
 //= require_tree .
