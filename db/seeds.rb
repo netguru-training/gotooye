@@ -36,26 +36,30 @@ egg.servings.create(
   name: "100g",
   protein: 70.0,
   carbs: 10.0,
-  fat: 20.0
+  fat: 20.0,
+  calories: 200.0
 )
 egg.servings.create(
   name: "piece",
   protein: 30.0,
   carbs: 6.0,
-  fat: 11.0
+  fat: 11.0,
+  calories: 100.0
 )
 
 tomato.servings.create(
   name: "100g",
   protein: 40.0,
   carbs: 50.0,
-  fat: 10.0
+  fat: 10.0,
+  calories: 20.0
 )
 tomato.servings.create(
   name: "piece",
   protein: 25.0,
   carbs: 26.0,
-  fat: 4.0
+  fat: 4.0,
+  calories: 10.0
 )
 
 #Recipes
